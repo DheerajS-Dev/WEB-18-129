@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <style>
+    body{
+         background-image: linear-gradient(to right, rgb(0, 170, 255),rgb(225, 0, 255));
+    }
+      
+        #login{
+            margin: auto;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            height: 40%;
+            width: fit-content;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 25px;
+            background-color: white;
+        }
+        #login>h3{
+            text-align: center;font-weight: bold;
+            margin-top: 10px;
+            margin-bottom:30px;
+            font-family: 'Mitr', sans-serif;
+font-family: 'Poppins', sans-serif;
+        }
+        input[type="email"],
+        input[type="password"],
+        select,textarea{
+            width: 100%;
+            padding: 12px;
+            border: 0px solid #ccc;
+            border-bottom: 1px solid gray;
+            text-underline-position: below;
+            border-radius: 3px;
+            box-sizing: border-box;
+            resize: vertical;
+            font-family: 'Mitr', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-weight: bold;
+        
+            margin-top: -5px;}
+        input[type="submit"]{
+            background-image: linear-gradient(to right, rgb(0, 170, 255),rgb(255, 0, 212));
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+            font-family: 'Mitr', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-weight: bold;
+            font-size: 20px;
+}
+p{
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+font-weight: bold;
+}
+       
+            </style>
+</head>
+<body>
+    <form id="login">
+        <h3>Login</h3>
+ <input type="email" id="email" placeholder="Enter email"/><br></br>
+
+ <input type="password" id="password" placeholder="Enter password"/><br></br>
+ <input type="submit" value="login"><br></br>
+ <p>Forgot <a href="www.google.com">Password </a> ?</p>
+ <p>Don't have an account ?
+   <a href="signup.html"> Sign Up</a></p>
+    </form>
+</body>
+</html>
+<script>
+var data=JSON.parse(localStorage.getItem("doc"))
+document.querySelector("#login").addEventListener("submit",myfunction)
+    function myfunction(){
+        event.preventDefault()
+        var enemail=document.querySelector("#email").value;
+        var enpassword=document.querySelector("#password").value;
+        data.forEach(function (elem) {
+    
+            var email=elem.email;
+            var password=elem.password;
+            if(email==enemail)
+            {
+                if(password==enpassword)
+                {
+                    alert("login successful")
+                }
+                else{
+                    alert("wrong password")
+                }
+            }})}
+</script>
